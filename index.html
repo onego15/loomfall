@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0a191d">
+  <meta name="description" content="LOOMFALL — 夜を織る。移動で糸を描き、囲んだ群れを刈り取る、幻想的なアクションローグライト。">
+  <title>LOOMFALL — 夜を織る</title>
+  <link rel="icon" href="./assets/emblem.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./src/style.css">
+</head>
+<body>
+  <canvas id="game" aria-label="LOOMFALL ゲーム画面"></canvas>
+  <div id="vignette"></div>
+  <main id="title" class="screen title-screen">
+    <div class="title-art"></div><div class="title-shade"></div>
+    <header class="masthead"><a href="./" aria-label="LOOMFALL ホーム"><img src="./assets/emblem.svg" alt=""> NIGHT GARDEN / 001</a><span>AN ORIGINAL WEAVING ROGUELITE</span><button class="icon-button sound-toggle" aria-label="音声切替">音 ON</button></header>
+    <section class="title-copy">
+      <div class="eyebrow"><span class="line"></span> THE LAST THREAD OF THE NIGHT</div>
+      <h1>LOOMFALL</h1><p class="japanese-title">夜 を 織 る</p>
+      <p class="title-intro">群れを誘い、糸を描け。<br>そのひと結びが、夜をほどく。</p>
+      <p class="title-description">移動の軌跡が、あなたの武器になる。<br>敵を囲み、結び、12分の夜明けを紡ぐ。</p>
+      <button id="start" class="primary"><span class="button-glyph">⌁</span><span>夜の庭へ<span class="sub">BEGIN THE WEAVE</span></span><span class="arrow">↗</span></button>
+      <div class="title-links"><button id="how-button">遊び方 <span>↗</span></button><button id="archive-button">記憶の織機 <span id="currency">0</span></button></div>
+    </section>
+    <section class="loadout-panel"><div class="panel-label"><span>CHOOSE YOUR THREAD</span><span>紡ぎ糸を選ぶ</span></div><div id="loadouts"></div></section>
+    <footer class="title-footer"><span>WASD / 矢印で移動 <b>·</b> SPACEで結ぶ <b>·</b> 攻撃は自動</span><span>HEADPHONES RECOMMENDED <i></i> v1.0</span></footer>
+  </main>
+  <section id="hud" class="hidden" aria-label="ゲーム情報">
+    <div class="hud-top"><div class="identity"><img src="./assets/emblem.svg" alt=""><div>LOOMFALL<small id="chapter">I · 目覚めの庭</small></div></div><div class="night-clock"><span id="time">00:00</span><div class="timeline"><i id="night-progress"></i><b style="left:29.17%"></b><b style="left:58.33%"></b><b style="left:91.67%"></b></div><small>DAWN AT 12:00</small></div><div class="hud-actions"><button class="icon-button sound-toggle">音 ON</button><button id="pause-button" class="icon-button" aria-label="ポーズ">Ⅱ</button></div></div>
+    <div class="status-left"><div class="health-label"><span>生命</span><span id="hp-text">100 / 100</span></div><div class="health-track"><i id="hp-bar"></i></div><div class="level-label"><span id="level">LV. 1</span><span id="xp-text">0 / 10</span></div><div class="xp-track"><i id="xp-bar"></i></div></div>
+    <div class="status-right"><span>収穫 <b id="kills">0</b></span><span>結び <b id="weaves">0</b></span><span id="resonance">共鳴 ×1.0</span></div>
+    <div id="boss-hud" class="hidden"><div><span id="boss-name"></span><small>GARDEN WARDEN</small></div><div class="boss-track"><i id="boss-bar"></i></div></div>
+    <div id="toast" role="status"></div>
+    <div id="tutorial" class="tutorial"><span class="tutorial-number">01</span><div><b id="tutorial-title">移動すると、糸が描かれる。</b><p id="tutorial-text">WASD / 矢印キーで動き、群れの周りに弧を描こう。</p></div><button id="dismiss-tutorial" aria-label="ヒントを閉じる">×</button></div>
+    <div id="build-strip"></div>
+    <div class="hud-bottom"><div class="controls-hint"><kbd>W A S D</kbd> 移動 <span>·</span> <kbd>SHIFT</kbd> すり抜け <span>·</span> <kbd>ESC</kbd> 休憩</div><div id="weave-control"><div class="spool-ring"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="20"/><circle id="spool-arc" cx="24" cy="24" r="20"/></svg><span>⌁</span></div><div><strong id="weave-ready">糸を結ぶ</strong><small id="weave-detail">囲んだ領域を収穫</small></div><kbd>SPACE</kbd></div><div class="area-readout"><small>ENCLOSED AREA</small><strong id="area">0 <em>m²</em></strong><span id="area-note">大きな輪ほど、高い威力</span></div></div>
+    <div id="touch-controls"><div id="joystick"><i></i></div><button id="touch-dash">疾走</button><button id="touch-weave">結ぶ</button></div>
+  </section>
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title"></div>
+  <div id="orientation">横画面にすると、庭を広く見渡せます。</div>
+  <script type="module" src="./src/app.js"></script>
+</body>
+</html>

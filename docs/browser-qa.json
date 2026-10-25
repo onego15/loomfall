@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-25T23:48:36.918Z",
+  "desktop": {
+    "errors": 0,
+    "snapshot": {
+      "time": 4.937300000000002,
+      "state": "playing",
+      "hp": 88,
+      "level": 1,
+      "kills": 2,
+      "weaves": 0,
+      "bossKills": 0,
+      "enemies": 28,
+      "build": {},
+      "stats": {
+        "netKills": 0,
+        "needleKills": 2,
+        "bigWeaves": 0,
+        "dashes": 1,
+        "damageTaken": 12
+      },
+      "area": 70302.57340071132,
+      "maxEnemies": 28,
+      "damage": 127.78750000000002
+    },
+    "canvas": [
+      1440,
+      960
+    ],
+    "scroll": [
+      1440,
+      1440
+    ]
+  },
+  "errors": [],
+  "checks": [
+    "title",
+    "help",
+    "keyboard movement",
+    "polygon creation",
+    "weave",
+    "pause",
+    "level choices",
+    "number-key choice",
+    "mobile layout",
+    "touch weave"
+  ]
+}

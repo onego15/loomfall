@@ -1,0 +1,60 @@
+{
+  "date": "2026-10-25T23:46:48.372Z",
+  "snapshot": {
+    "time": 605.6379000001116,
+    "state": "playing",
+    "hp": 113.5800000000003,
+    "level": 35,
+    "kills": 7137,
+    "weaves": 99,
+    "bossKills": 2,
+    "enemies": 205,
+    "build": {
+      "chain": 3,
+      "thread": 5,
+      "length": 3,
+      "bloom": 4,
+      "frost": 3,
+      "vital": 2,
+      "magnet": 3,
+      "step": 3,
+      "needle": 1,
+      "echo": 2,
+      "leech": 3,
+      "fork": 2
+    },
+    "stats": {
+      "netKills": 6884,
+      "needleKills": 253,
+      "bigWeaves": 95,
+      "dashes": 109,
+      "damageTaken": 899.9500000000012
+    },
+    "area": 88313.7676657791,
+    "maxEnemies": 233,
+    "damage": 825994.3604701934
+  },
+  "frameMs": {
+    "count": 277,
+    "mean": 21.666064981949457,
+    "median": 16.19999999999891,
+    "p95": 38.400000000001455
+  },
+  "updateMs": {
+    "count": 277,
+    "mean": 1.3245487363760222,
+    "median": 1.100000023841858,
+    "p95": 2.799999952316284
+  },
+  "renderMs": {
+    "count": 277,
+    "mean": 3.778339347254068,
+    "median": 3.399999976158142,
+    "p95": 7.100000023841858
+  },
+  "canvas": [
+    1200,
+    800
+  ],
+  "note": "Headless Chrome, no screen capture during measurement; performance varies by hardware."
+}

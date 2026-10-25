@@ -1,0 +1,13 @@
+{
+  "name": "loomfall",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "An original silk-weaving action roguelite for the browser",
+  "scripts": {
+    "start": "node tools/serve.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "check": "node --check src/engine.js && node --check src/render.js && node --check src/app.js",
+    "build": "node tools/build.mjs"
+  }
+}
