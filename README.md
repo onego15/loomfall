@@ -1,12 +1,14 @@
 # LOOMFALL — 夜を織る
 
-**プレイURL：公開準備中**（予定：<https://onego15.github.io/loomfall/>）
+**プレイURL：[https://onego15.github.io/loomfall/](https://onego15.github.io/loomfall/)** · [ソースコード](https://github.com/onego15/loomfall)
+
+GitHub Pagesで公開済み。公開先のChromeで起動・操作・経験値回収・強化選択まで検証済み（HTTP 200、JavaScript/アセットエラー0件）。
 
 群れを誘い、糸を描け。そのひと結びが、夜をほどく。
 
 移動の軌跡を閉じて敵を収穫する、オリジナルのアクションローグライト。約12分の夜を、自分だけの能力の組み合わせで越える。
 
-![実際のブラウザゲームプレイ・12.5秒](docs/demo.gif)
+![実際のブラウザゲームプレイ・12.24秒](docs/demo.gif)
 
 [実プレイ動画 MP4（無音・約32秒）](docs/gameplay.mp4) · [制作ノート](docs/DESIGN.md) · [アセット・AI利用記録](docs/ASSETS.md)
 
@@ -72,8 +74,8 @@ GitHub Pagesは main ブランチの `/ (root)` から配信。`.nojekyll` を�
 | 開発 / QA | Node.js、Node test runner、Playwright + Chrome、Python/Pillow、imageio-ffmpeg |
 | 画像 | タイトル背景のみimagegen。キャラクター、庭園、UI、攻撃はコードで制作 |
 | 制作開始 | 2026-10-26 08:11:35 JST（最初に取得した時計のUTC値を変換）|
-| 制作終了 | 検証・公開作業中。完了時に記録 |
-| 経過時間 | 完了時に確認できた時計から算出 |
+| 制作終了 | 2026-10-26 09:00:58 JST（公開動作検証完了・記録確定。以降は成果物のpushと配信確認）|
+| 経過時間 | 49分23秒（上記開始〜記録確定の時計差分）|
 
 実際に利用したプロンプト、画像の保存先、音楽の作り方は [ASSETS.md](docs/ASSETS.md) に記載。依頼プロンプト全文は本README末尾にそのまま収録。
 
@@ -84,6 +86,8 @@ GitHub Pagesは main ブランチの `/ (root)` から配信。`.nojekyll` を�
 - `npm test`：11 / 11 合格（エンジン8項目＋異なる3ビルドでの開始からクリアまでの通しテスト）。エンジンテスト：領域判定、自己交差、経験値吸引、狭い輪、無入力ダッシュ、境界、不正な能力選択、全能力併用、敗北・リトライ、ボス撃破、乱数の再現性。
 - 通しシミュレーション：無敵化なし・能力の後付けなし。領域 / 針 / 庭の3戦略、各3シード、計9回中7回クリア。針特化は1/3、領域と庭はそれぞれ3/3。これは限られた自動操作方針での結果で、一般プレイヤーの勝率ではない。詳細は [balance.json](docs/balance.json)。
 - ブラウザ操作：タイトル、遊び方、移動、領域生成、SPACE、ポーズ、レベルアップ3択、数字キー、390×844表示、タッチの結び。エラー0件。[browser-qa.json](docs/browser-qa.json)
+- 公開先の実操作：HTTP 200、全アセット正常。12秒進行し、15体撃破・3回の結び・Lv.2到達・強化選択1回を確認。ポーズ、再開、記憶の織機、公開先でのQA API無効化も検証。[public-qa.json](docs/public-qa.json)
+- 終盤性能（録画停止、headless Chrome / 1200×800）：フレーム中央値16.2ms、平均21.7ms。描画平均3.78ms、シミュレーション平均1.32ms。205体前後の敵がいる6秒間の測定で、実機全般を保証するものではない。[performance.json](docs/performance.json)
 - 実ブラウザの終盤：通常プレイから最終ボス、エンディング、再挑戦、敗北画面まで確認。[ending-qa.json](docs/ending-qa.json)
 - 初期実装後、自動攻撃への偏り、経験値回収、全ビルドの同一化、針構成の弱さ、背景の視認性、終盤負荷を改善。具体的な変更は [DESIGN.md](docs/DESIGN.md)。
 

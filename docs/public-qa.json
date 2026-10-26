@@ -1,0 +1,117 @@
+{
+  "date": "2026-10-25T23:59:47.856Z",
+  "url": "https://onego15.github.io/loomfall/",
+  "status": 200,
+  "hud": {
+    "time": "00:12",
+    "hp": "100 / 100",
+    "level": "LV. 2",
+    "kills": "15",
+    "weaves": "3",
+    "build": 1,
+    "canvas": [
+      1440,
+      960
+    ]
+  },
+  "upgrades": 1,
+  "checks": [
+    "public subpath",
+    "title image and modules load",
+    "start loadout selection",
+    "real keyboard movement",
+    "weave",
+    "XP and level-up",
+    "upgrade card choice",
+    "pause and resume",
+    "archive",
+    "QA API disabled"
+  ],
+  "errors": [],
+  "responses": [
+    {
+      "url": "https://onego15.github.io/loomfall/",
+      "status": 200
+    },
+    {
+      "url": "https://onego15.github.io/loomfall/src/style.css",
+      "status": 200
+    },
+    {
+      "url": "https://onego15.github.io/loomfall/assets/emblem.svg",
+      "status": 200
+    },
+    {
+      "url": "https://onego15.github.io/loomfall/src/app.js",
+      "status": 200
+    },
+    {
+      "url": "https://onego15.github.io/loomfall/assets/garden.webp",
+      "status": 200
+    },
+    {
+      "url": "https://onego15.github.io/loomfall/src/engine.js",
+      "status": 200
+    },
+    {
+      "url": "https://onego15.github.io/loomfall/src/render.js",
+      "status": 200
+    },
+    {
+      "url": "https://onego15.github.io/loomfall/src/audio.js",
+      "status": 200
+    },
+    {
+      "url": "https://onego15.github.io/loomfall/src/qa-pilot.js",
+      "status": 200
+    },
+    {
+      "url": "https://onego15.github.io/loomfall/assets/emblem.svg",
+      "status": 200
+    },
+    {
+      "url": "https://onego15.github.io/loomfall/assets/emblem.svg",
+      "status": 200
+    },
+    {
+      "url": "https://onego15.github.io/loomfall/?test=1",
+      "status": 200
+    },
+    {
+      "url": "https://onego15.github.io/loomfall/src/style.css",
+      "status": 200
+    },
+    {
+      "url": "https://onego15.github.io/loomfall/src/app.js",
+      "status": 200
+    },
+    {
+      "url": "https://onego15.github.io/loomfall/assets/emblem.svg",
+      "status": 200
+    },
+    {
+      "url": "https://onego15.github.io/loomfall/src/engine.js",
+      "status": 200
+    },
+    {
+      "url": "https://onego15.github.io/loomfall/src/render.js",
+      "status": 200
+    },
+    {
+      "url": "https://onego15.github.io/loomfall/src/audio.js",
+      "status": 200
+    },
+    {
+      "url": "https://onego15.github.io/loomfall/src/qa-pilot.js",
+      "status": 200
+    },
+    {
+      "url": "https://onego15.github.io/loomfall/assets/garden.webp",
+      "status": 200
+    },
+    {
+      "url": "https://onego15.github.io/loomfall/assets/emblem.svg",
+      "status": 200
+    }
+  ]
+}

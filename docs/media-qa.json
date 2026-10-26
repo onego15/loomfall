@@ -1,0 +1,17 @@
+{
+  "gif": {
+    "frames": 77,
+    "durationSeconds": 12.24,
+    "width": 639,
+    "height": 426,
+    "bytes": 8770166
+  },
+  "mp4": {
+    "duration": "00:00:31.36",
+    "bytes": 15712673
+  },
+  "sha256": {
+    "docs/demo.gif": "4ab83e14feadd0265607f6c7cd36113920774a98188de7c640dda37fc5e40b2e",
+    "docs/gameplay.mp4": "e21fc2ab97a7f6410b039c6490067b7bd11fb1d957507eaee80d71354ec66823"
+  }
+}

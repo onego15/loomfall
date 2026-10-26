@@ -1,19 +1,29 @@
 """Encode captured browser screenshots into the README GIF and a silent MP4."""
 from pathlib import Path
 from PIL import Image
-import json, subprocess
+import json, subprocess, sys
 import imageio_ffmpeg
 root=Path(__file__).resolve().parents[1]
 meta=json.loads((root/'docs/recording.json').read_text(encoding='utf-8'))
 frames=[];durations=[]
-gif_frames=[f for f in meta['frames'] if f['at']<12500]
+gif_frames=[]
+for f in meta['frames']:
+    if f['at']<12500 and (not gif_frames or f['at']-gif_frames[-1]['at']>=95):gif_frames.append(f)
+reference=min(meta['frames'],key=lambda f:abs(f['at']-11500))
+palette=Image.open(root/f"tmp/capture/{reference['index']:04d}.jpg").convert('RGB')
+palette.thumbnail((640,426),Image.Resampling.LANCZOS)
+palette=palette.quantize(colors=64,method=Image.Quantize.FASTOCTREE)
 for i,f in enumerate(gif_frames):
-    im=Image.open(root/f"tmp/capture/{i:04d}.jpg").convert('RGB')
-    im.thumbnail((900,600),Image.Resampling.LANCZOS)
-    frames.append(im.quantize(colors=112,method=Image.Quantize.MEDIANCUT))
+    im=Image.open(root/f"tmp/capture/{f['index']:04d}.jpg").convert('RGB')
+    im.thumbnail((640,426),Image.Resampling.LANCZOS)
+    frames.append(im.quantize(palette=palette,dither=Image.Dither.NONE))
     following=gif_frames[i+1]['at'] if i+1<len(gif_frames) else 12500
     durations.append(max(20,round((following-f['at'])/10)*10))
-frames[0].save(root/'docs/demo.gif',save_all=True,append_images=frames[1:],duration=durations,loop=0,optimize=False,disposal=2)
+frames[0].save(root/'docs/demo.gif',save_all=True,append_images=frames[1:],duration=durations,loop=0,optimize=True,disposal=1)
+Image.open(root/f"tmp/capture/{reference['index']:04d}.jpg").save(root/'docs/boss.png')
+if '--gif-only' in sys.argv:
+    print({'frames':len(frames),'gif_seconds':sum(durations)/1000,'gif_bytes':(root/'docs/demo.gif').stat().st_size})
+    sys.exit(0)
 concat=root/'tmp/capture/frames.txt'
 lines=[]
 for i,f in enumerate(meta['frames']):
